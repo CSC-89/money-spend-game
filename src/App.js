@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import Person from "./components/Person/Person";
 import ItemList from "./components/Items/ItemList";
 import { Container } from "react-bootstrap";
+import AuthContext from './context/auth.context';
 
 import ShoppingList from "./components/ShoppingList/ShoppingList";
 
@@ -31,7 +32,9 @@ function App() {
   console.log("GrandTotal is: ", grandTotal);
   console.log("Total Cost is: ", totalAmount);
   return (
+    <AuthContext.Provider>
     <div className="App">
+      
       <Container>
         <Person amount={totalAmount} />
         <ItemList onCollectData={collectData} itemData={itemData} />
@@ -39,6 +42,7 @@ function App() {
       {/* To pass data to the shopping list I will need to pass the itemName from Items, and store in the state. Maybe store it into a seperate state than the price calculations? */}
       {totalAmount > 0 && <ShoppingList />}
     </div>
+    </AuthContext.Provider>
   );
 }
 
