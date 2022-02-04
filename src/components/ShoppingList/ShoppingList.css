@@ -1,0 +1,13 @@
+
+.shopping-list-button {
+    position: fixed;
+    height: 5em;
+    background-color: rgb(41, 115, 211);
+    bottom: 30px;
+    left: 70px;
+    right: 0px;
+    margin-bottom: 0px;
+    transition: display 3s;
+    width: 15em;
+    
+}
